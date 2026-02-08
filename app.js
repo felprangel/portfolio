@@ -5,57 +5,53 @@ const fallbackData = {
     bio: "Crio experiências digitais completas, combinando interfaces modernas com soluções escaláveis no back-end.",
     avatar_url: "https://avatars.githubusercontent.com/u/1?v=4",
     html_url: "https://github.com/felprangel",
-    email: "felipe@email.com",
+    email: "contato@felpo.dev",
     socials: {
-      linkedin: "https://www.linkedin.com",
-      instagram: "https://www.instagram.com",
+      linkedin: "https://www.linkedin.com/in/felipe-rangel-ribeiro-73a899251/",
+      instagram: "https://www.instagram.com/felp_rangel",
     },
   },
   repos: {
     pomodoro: {
       name: "Pomodoro",
-      description:
-        "Aplicativo de produtividade com ciclos personalizados e estatísticas.",
+      description: "Aplicativo de produtividade baseado na técnica de pomodoro",
       language: "TypeScript",
       stargazers_count: 0,
       html_url: "https://github.com/felprangel/pomodoro",
     },
     bookmark: {
       name: "Bookmark",
-      description:
-        "Gerenciador de links com busca rápida e organização por tags.",
-      language: "JavaScript",
+      description: "Gerenciador de livros lidos e em processo de leitura.",
+      language: "TypeScript",
       stargazers_count: 0,
       html_url: "https://github.com/felprangel/bookmark",
     },
     "bookmark-api": {
       name: "Bookmark API",
-      description: "API REST para autenticação, usuários e coleções de links.",
-      language: "Node.js",
+      description: "API REST utilizada pelo frontend do bookmark.",
+      language: "PHP",
       stargazers_count: 0,
       html_url: "https://github.com/felprangel/bookmark-api",
-    },
-    "esmalte-api": {
-      name: "Esmalte API",
-      description:
-        "Serviço para catálogo de cores e consulta rápida de estoque.",
-      language: "Go",
-      stargazers_count: 0,
-      html_url: "https://github.com/felprangel/esmalte-api",
     },
     "zebra-printer-simulator": {
       name: "Zebra Printer Simulator",
       description:
         "Simulador para testes de impressão e validação de etiquetas.",
-      language: "Python",
+      language: "JavaScript",
       stargazers_count: 0,
       html_url: "https://github.com/felprangel/zebra-printer-simulator",
     },
+    "chip8-js": {
+      name: "Chip-8 JS",
+      description: "Emulador CHIP-8 na web",
+      language: "JavaScript",
+      stargazers_count: 0,
+      html_url: "https://github.com/felprangel/chip8-js",
+    },
     chip8: {
       name: "Chip-8",
-      description:
-        "Emulador CHIP-8 com renderização fiel e controles customizáveis.",
-      language: "C++",
+      description: "Emulador CHIP-8 implementado em C",
+      language: "C",
       stargazers_count: 0,
       html_url: "https://github.com/felprangel/chip8",
     },
@@ -66,8 +62,8 @@ const repoOrder = [
   "pomodoro",
   "bookmark",
   "bookmark-api",
-  "esmalte-api",
   "zebra-printer-simulator",
+  "chip8-js",
   "chip8",
 ];
 
@@ -98,7 +94,7 @@ function fetchWithTimeout(url, options = {}, timeoutMs = 6000) {
 
 async function loadGithubProfile() {
   const response = await fetchWithTimeout(
-    "https://api.github.com/users/felprangel"
+    "https://api.github.com/users/felprangel",
   );
   if (!response.ok) {
     throw new Error("Failed to load profile");
@@ -108,7 +104,7 @@ async function loadGithubProfile() {
 
 async function loadRepo(repo) {
   const response = await fetchWithTimeout(
-    `https://api.github.com/repos/felprangel/${repo}`
+    `https://api.github.com/repos/felprangel/${repo}`,
   );
   if (!response.ok) {
     throw new Error(`Failed to load repo ${repo}`);
