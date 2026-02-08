@@ -3,7 +3,7 @@ const fallbackData = {
     login: "felprangel",
     name: "Felipe Rangel",
     bio: "Crio experiências digitais completas, combinando interfaces modernas com soluções escaláveis no back-end.",
-    avatar_url: "https://avatars.githubusercontent.com/u/1?v=4",
+    avatar_url: "https://avatars.githubusercontent.com/u/113402519?v=4",
     html_url: "https://github.com/felprangel",
     email: "contato@felpo.dev",
     socials: {
@@ -155,7 +155,7 @@ function renderRepos(reposByName) {
     const title = card.querySelector("h4");
     const description = card.querySelector("p");
     const tags = card.querySelectorAll(".tag");
-    const link = card.querySelector(".btn");
+    const link = card.querySelector(".github-btn");
 
     if (title) title.textContent = repo.name || title.textContent;
     if (description) {
@@ -167,7 +167,14 @@ function renderRepos(reposByName) {
     }
 
     if (tags.length > 1) {
-      tags[1].textContent = `⭐ ${repo.stargazers_count || 0}`;
+      const stars = repo.stargazers_count || 0;
+      if (stars > 0) {
+        tags[1].textContent = `⭐ ${stars}`;
+        tags[1].style.display = "inline-flex";
+      } else {
+        tags[1].textContent = "";
+        tags[1].style.display = "none";
+      }
     }
 
     if (link && repo.html_url) {

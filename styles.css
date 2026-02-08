@@ -193,6 +193,18 @@ a {
   gap: 12px;
 }
 
+.project-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.project-actions .btn {
+  margin-top: 0;
+  flex: 1 1 auto;
+}
+
 .thumb {
   height: 140px;
   border-radius: 14px;
@@ -255,7 +267,6 @@ a {
 }
 
 .btn {
-  margin-top: auto;
   padding: 10px 14px;
   border-radius: 12px;
   background: var(--card-strong);
