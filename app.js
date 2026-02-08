@@ -61,9 +61,9 @@ const fallbackData = {
 const repoOrder = [
   "pomodoro",
   "bookmark",
-  "bookmark-api",
-  "zebra-printer-simulator",
   "chip8-js",
+  "zebra-printer-simulator",
+  "bookmark-api",
   "chip8",
 ];
 
